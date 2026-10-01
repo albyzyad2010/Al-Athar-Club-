@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>نادي الأثر للقراءة</title>
+
+    <style>
+
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            background-color: #f5f1e8;
+            font-family: Arial, sans-serif;
+            color: #333;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 900px;
+            margin: 40px auto;
+        }
+
+        .card {
+            background-color: white;
+            padding: 40px 25px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+            text-align: center;
+        }
+
+        h1 {
+            color: #2f4f3a;
+            font-size: 38px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 19px;
+            line-height: 1.8;
+            color: #555;
+        }
+
+        .description {
+            margin-bottom: 30px;
+        }
+
+        .section {
+            margin-top: 35px;
+            margin-bottom: 30px;
+            background-color: #f8f6f0;
+            padding: 25px;
+            border-radius: 25px;
+        }
+
+        .section h2 {
+            color: #2f4f3a;
+            font-size: 28px;
+        }
+
+        .button {
+            display: inline-block;
+            background-color: #2f4f3a;
+            color: white;
+            text-decoration: none;
+            padding: 15px 35px;
+            border-radius: 12px;
+            font-size: 18px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            font-family: Arial, sans-serif;
+        }
+
+        .button:hover {
+            background-color: #203829;
+        }
+
+        #register {
+            display: none;
+        }
+
+        .form-card {
+            background-color: white;
+            padding: 30px;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+        }
+
+        .form-card h1 {
+            text-align: center;
+            font-size: 32px;
+        }
+
+        label {
+            display: block;
+            text-align: right;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        input {
+            width: 100%;
+            padding: 14px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 10px;
+            font-size: 16px;
+            font-family: Arial, sans-serif;
+            outline: none;
+        }
+
+        input:focus {
+            border-color: #2f4f3a;
+        }
+
+        .back-button {
+            margin-top: 20px;
+            background-color: transparent;
+            color: #2f4f3a;
+            border: none;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: Arial, sans-serif;
+        }
+
+        #success {
+            display: none;
+            text-align: center;
+        }
+
+        #success h2 {
+            color: #2f4f3a;
+            font-size: 30px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 30px;
+            color: #777;
+            font-size: 14px;
+        }
+
+        @media (max-width: 600px) {
+
+            .container {
+                width: 94%;
+                margin: 25px auto;
+            }
+
+            .card {
+                padding: 30px 18px;
+            }
+
+            h1 {
+                font-size: 30px;
+            }
+
+            p {
+                font-size: 17px;
+            }
+
+            .button {
+                width: 100%;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         الصفحة الرئيسية
+    ========================== -->
+
+    <div id="home">
+
+        <div class="container">
+
+            <div class="card">
+
+                <h1>
+                    📚 نادي الأثر للقراءة
+                </h1>
+
+                <p class="description">
+
+                    لأن الكتاب لا ينتهي أثره عند آخر صفحة...
+                    نقرأ معًا، نتحاور، ونصنع أثرًا.
+
+                </p>
+
+
+                <div class="section">
+
+                    <h2>
+                        من نحن؟
+                    </h2>
+
+                    <p>
+
+                        نادي الأثر هو مساحة ثقافية تجمع محبي القراءة،
+                        وتتيح لهم مشاركة الأفكار ومناقشة الكتب
+                        وتوسيع آفاقهم من خلال الحوار والمعرفة.
+
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="button"
+                    onclick="showRegister()">
+
+                    سجّل معنا
+
+                </button>
+
+            </div>
+
+
+            <footer>
+
+                © 2026 نادي الأثر للقراءة
+
+            </footer>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         صفحة التسجيل
+    ========================== -->
+
+    <div id="register">
+
+        <div class="container">
+
+            <div class="form-card">
+
+
+                <!-- نموذج التسجيل -->
+
+                <form id="registrationForm">
+
+                    <h1>
+                        📚 التسجيل في نادي الأثر
+                    </h1>
+
+
+                    <!-- الاسم -->
+
+                    <label>
+                        الإسم:
+                    </label>
+
+                    <input
+                        type="text"
+                        name="name"
+                        placeholder="اكتب اسمك"
+                        required
+                    >
+
+
+                    <!-- العمر -->
+
+                    <label>
+                        العمر:
+                    </label>
+
+                    <input
+                        type="number"
+                        name="age"
+                        placeholder="اكتب عمرك"
+                        min="1"
+                        max="100"
+                        required
+                    >
+
+
+                    <!-- الرقم -->
+
+                    <label>
+                        الرقم:
+                    </label>
+
+                    <input
+                        type="tel"
+                        name="phone"
+                        placeholder="اكتب رقم الهاتف"
+                        required
+                    >
+
+
+                    <!-- زر الإرسال -->
+
+                    <button
+                        type="submit"
+                        class="button"
+                        id="submitButton">
+
+                        إرسال التسجيل
+
+                    </button>
+
+                </form>
+
+
+
+                <!-- =========================
+                     رسالة النجاح
+                ========================== -->
+
+                <div id="success">
+
+                    <h2>
+                        ✅ تم التسجيل بنجاح!
+                    </h2>
+
+                    <p>
+                        شكرًا لانضمامك إلى نادي الأثر للقراءة.
+                    </p>
+
+                    <button
+                        class="button"
+                        onclick="showHome()">
+
+                        العودة للصفحة الرئيسية
+
+                    </button>
+
+                </div>
+
+
+                <!-- العودة -->
+
+                <div style="text-align: center;">
+
+                    <button
+                        class="back-button"
+                        onclick="showHome()">
+
+                        ← العودة للصفحة الرئيسية
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =========================
+         JavaScript
+    ========================== -->
+
+    <script>
+
+
+        /* فتح صفحة التسجيل */
+
+        function showRegister() {
+
+            document.getElementById("home").style.display = "none";
+
+            document.getElementById("register").style.display = "block";
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        /* العودة للصفحة الرئيسية */
+
+        function showHome() {
+
+            document.getElementById("register").style.display = "none";
+
+            document.getElementById("home").style.display = "block";
+
+            document.getElementById("success").style.display = "none";
+
+            document.getElementById("registrationForm").style.display = "block";
+
+            document.getElementById("registrationForm").reset();
+
+            window.scrollTo(0, 0);
+
+        }
+
+
+
+        /* إرسال التسجيل إلى Formspree */
+
+        document
+            .getElementById("registrationForm")
+            .addEventListener("submit", async function(event) {
+
+                event.preventDefault();
+
+
+                const form = event.target;
+
+                const button = document.getElementById("submitButton");
+
+
+                /* تغيير الزر أثناء الإرسال */
+
+                button.textContent = "جاري الإرسال...";
+
+                button.disabled = true;
+
+
+                try {
+
+                    const response = await fetch(
+                        "https://formspree.io/f/mjykzllj",
+                        {
+                            method: "POST",
+
+                            body: new FormData(form),
+
+                            headers: {
+                                "Accept": "application/json"
+                            }
+                        }
+                    );
+
+
+                    if (response.ok) {
+
+                        /* إخفاء النموذج */
+
+                        form.style.display = "none";
+
+
+                        /* إظهار رسالة النجاح */
+
+                        document.getElementById("success")
+                            .style.display = "block";
+
+                    } else {
+
+                        alert(
+                            "حدث خطأ أثناء الإرسال. حاول مرة أخرى."
+                        );
+
+                    }
+
+                } catch (error) {
+
+                    alert(
+                        "تعذر الاتصال بالإنترنت. حاول مرة أخرى."
+                    );
+
+                }
+
+
+                /* إعادة الزر */
+
+                button.textContent = "إرسال التسجيل";
+
+                button.disabled = false;
+
+            });
+
+    </script>
+
+
+</body>
+
+  </html>
